@@ -16,10 +16,10 @@ With the GIO tools you should be able to:
 
 The code is entirely written in python3.7. Make sure you have the following dependencies installed:
 
-- Conda (ENLACE)
-- FERMITOOLS (ENLACE)
-- FERMIPY (ENLACE)
-- yagmail (INSTRUCCIONES)
+- Conda (https://docs.conda.io/en/latest/)
+- Fermi Tools (https://github.com/fermi-lat/Fermitools-conda)
+- FERMIPY (https://github.com/fermiPy/fermipy)
+- yagmail (https://github.com/kootenpv/yagmail)
 - Numpy
 - astropy.io
 - matplotlib
