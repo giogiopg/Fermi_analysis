@@ -56,4 +56,8 @@ Do not forget to activate your fermi enviroment before using the GIO tools:
 
 _$conda activate fermi_
 
+To start the gui you only need to type now:
+
+_$python3 GIOFERMI.py_
+
 You a ready forr your analysis!
