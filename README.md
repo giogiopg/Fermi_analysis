@@ -1,9 +1,10 @@
 # Fermi_analysis
 
-This repository has been created with the aim of attaching the source code used in my Bachelor's Thesis. Therefore, it has been created to fullfil personal neccesities.
-The code has been implemented using the Fermi Tools as well as fermipy. (Poner enlaces).
+The GIO analysis tools have been developed to fulfill my Bachelor's Thesis necessities.
+The code has been implemented using the Fermi Tools(https://github.com/fermi-lat/Fermitools-conda) as well as fermipy (https://github.com/fermiPy/fermipy).
 
-With this repository you should be able to:
+
+With the GIO tools you should be able to:
 
 - Perform your own binned analysis.
 - Get a counts Map of the región as well as a ROI .reg file.
