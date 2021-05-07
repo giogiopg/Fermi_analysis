@@ -277,7 +277,7 @@ button_setup = tk.Button(subframe, text='Setup files for analysis', bg='gray', f
 button_setup.grid(row=12, column=3)
 
 button_LCfile = tk.Button(subframe, text='Make LC file', bg='gray', fg='black',
-	                     command=lambda: LCfile_func(entry_LCname.get(), entry_ra.get(), entry_dec.get(),
+	                     command=lambda: LCfile_func(entry_LCname.get(), entry_evfile.get(),entry_ra.get(), entry_dec.get(),
 	                     	entry_LCemin.get(), entry_LCemax.get(), entry_tmin.get(), entry_tmax.get(),
 	                     	entry_scfile.get(), entry_LCnbins.get()))
 button_LCfile.grid(row=11, column=4)
@@ -315,7 +315,7 @@ def resid_info():
 def SED_info():
 	messagebox.showinfo('Information','Needed data to perform the SED: target, SEDnbins')
 def LCfile_info():
-	messagebox.showinfo('Information','Needed data to perform the LCfile: LCname, ra, dec, LCEmin, LCEmax, tmin, tmax, scfile, LCnbins')
+	messagebox.showinfo('Information','Needed data to perform the LCfile: LCname, evfile, ra, dec, LCEmin, LCEmax, tmin, tmax, scfile, LCnbins')
 def LCmake_info():
 	messagebox.showinfo('Information','Needed data to perform the LC: email*, password*, LCname and having created LC file.')
 def setup_info():
@@ -346,7 +346,7 @@ def LC_func(entry_mail, entry_password, entry_LCname):
 		label_results['text'] = 'Proccess cancelled. Copy to run: . %s_LC_commands.txt' % (entry_LCname)
 
 
-def LCfile_func(entry_LCname, entry_ra, entry_dec, entry_LCemin, entry_LCemax, entry_tmin, entry_tmax, entry_scfile, entry_LCnbins):
+def LCfile_func(entry_LCname, entry_evfile, entry_ra, entry_dec, entry_LCemin, entry_LCemax, entry_tmin, entry_tmax, entry_scfile, entry_LCnbins):
 	import os
 
 	name = str(entry_LCname)
@@ -358,6 +358,7 @@ def LCfile_func(entry_LCname, entry_ra, entry_dec, entry_LCemin, entry_LCemax, e
 	tmax = float(entry_tmax)
 	scfile=str(entry_scfile)
 	nbins = float(entry_LCnbins)
+	evfile = str(entry_evfile)
 	wd = os.getcwd()
 
 	tmin_corr = tmin + 1000
@@ -370,7 +371,7 @@ def LCfile_func(entry_LCname, entry_ra, entry_dec, entry_LCemin, entry_LCemax, e
 
 	#first gtselect
 	file1.write('gtselect zmax=90 emin='+emin+' emax='+emax+
-		' infile=@binned_events.txt outfile='+name+'_'+ra+'_'+dec+'_LC_gtsel.fits'+
+		' infile=@'+evfile+' outfile='+name+'_'+ra+'_'+dec+'_LC_gtsel.fits'+
 		' ra='+ra+' dec='+dec+' rad=1 tmin='+str(tmin_corr)+' tmax='+str(tmax_corr)+' evclass=128 evtype=3 \n')
 
 	file1.write('gtmktime scfile='+scfile+' filter="(DATA_QUAL==1)'+ 
