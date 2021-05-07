@@ -413,7 +413,7 @@ def config_func(entry_target, entry_tmin, entry_tmax, entry_scfile, entry_Emin,e
 
 		congfile.write('data:\n  evfile : %s \n  scfile : %s \n' % (entry_evfile, entry_scfile))
 		congfile.write('\n')
-		congfile.write('binning:\n  roiwidth   : 15.0\n  binsz      : 0.1\n   binsperdec : 8\n ')
+		congfile.write('binning:\n  roiwidth   : 15.0\n  binsz      : 0.1\n  binsperdec : 8\n ')
 		congfile.write('\n')
 		congfile.write('selection :\n  emin : %s \n  emax : %s \n  zmax    : 90\n  evclass : 128\n  evtype  : 3\n  tmin    : %s \n  tmax    : %s \n  filter  : \'DATA_QUAL>0 && LAT_CONFIG==1\' \n  target : \'%s\' \n' % (entry_Emin,entry_Emax,entry_tmin, entry_tmax,entry_target))
 		congfile.write('\n')
