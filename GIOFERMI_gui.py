@@ -1,6 +1,10 @@
 import tkinter as tk 
 from tkinter import messagebox
 from make4FGLxml import *
+try:
+	from gt_apps import filter
+except:
+	print('REMEMBER TO ACTIVATE FERMI!!! (conda activate fermi)')
 
 #-----------------------gui----------------------------------------
 
