@@ -1,6 +1,6 @@
 import tkinter as tk 
 from tkinter import messagebox
-#from make4FGLxml import *
+from make4FGLxml import *
 
 #-----------------------gui----------------------------------------
 
@@ -409,7 +409,7 @@ def LCfile_func(entry_LCname, entry_ra, entry_dec, entry_LCemin, entry_LCemax, e
 
 def config_func(entry_target, entry_tmin, entry_tmax, entry_scfile, entry_Emin,entry_Emax,entry_evfile):
 	try:
-		congfile = open('Config.yaml','w+')
+		congfile = open('config.yaml','w+')
 
 		congfile.write('data:\n  evfile : %s \n  scfile : %s \n' % (entry_evfile, entry_scfile))
 		congfile.write('\n')
@@ -527,7 +527,7 @@ def cmap_func(entry_mail, entry_password, entry_evfile, entry_ra, entry_dec, ent
 	tmax = int(entry_tmax)
 	scfile=str(entry_scfile)
 
-	filter['infile'] = '@binned_events.txt'
+	filter['infile'] = '@'+entry_evfile
 	filter['outfile'] = nombre+'_gtselect.fits'
 	filter['ra'] = ra
 	filter['dec'] = dec
