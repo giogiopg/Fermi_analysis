@@ -317,7 +317,7 @@ def SED_info():
 def LCfile_info():
 	messagebox.showinfo('Information','Needed data to perform the LCfile: LCname, ra, dec, LCEmin, LCEmax, tmin, tmax, scfile, LCnbins')
 def LCmake_info():
-	messagebox.showinfo('Information','Needed data to perform the LC: email*, password*, having created LC file.')
+	messagebox.showinfo('Information','Needed data to perform the LC: email*, password*, LCname and having created LC file.')
 def setup_info():
 	messagebox.showinfo('Information','Needed data to setup all files for analysis: mail*, password*, having create config file.')
 
