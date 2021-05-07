@@ -44,13 +44,17 @@ Second, you will need to launch a data query via fermi servers and download your
 
 To use the GIOFERMI tools, the easiest way is to git clone the tools into your analysis repository were your photon and spacecraft data files are placed. Then unzip the fermifiles.zip file. You can also remove the zip file after unzipping it. Last but not least, download the fermi difusse model catalog. To put it briefly, go to the folder where you have put your photon a spacecraft files and run:
 
-_$https://github.com/giogiopg/Fermi_analysis.git_
+_$git clone https://github.com/giogiopg/Fermi_analysis.git_
+
+_$scp -r Fermi_analysis/* ._
 
 _$unzip fermifiles.zip_
 
 _Srm fermifiles.zip_
 
-_Swget https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/aux/4fgl/gll_iem_v07.fits_
+_$rm -r Fermi_analysis_
+
+_$wget https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/aux/4fgl/gll_iem_v07.fits_
  
 Do not forget to activate your fermi enviroment before using the GIO tools:
 
