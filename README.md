@@ -50,7 +50,7 @@ _$scp -r Fermi_analysis/* ._
 
 _$unzip fermifiles.zip_
 
-_Srm fermifiles.zip_
+_$rm fermifiles.zip_
 
 _$rm -r Fermi_analysis_
 
