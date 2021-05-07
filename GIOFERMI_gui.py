@@ -325,7 +325,7 @@ def setup_info():
 def LC_func(entry_mail, entry_password, entry_LCname):
 	ans=messagebox.askyesno('Warning','It will take a while. Is advisable to run in the terminal instead via ". (LCname)_LC_commands.txt" where LC_name is the name you have provided. Do you want to continue anyway?')
 	if ans == 1:
-		import os
+		import subprocess
 		import yagmail
 
 		if entry_mail == '':
@@ -333,7 +333,8 @@ def LC_func(entry_mail, entry_password, entry_LCname):
 		else:
 			receiver = entry_mail
 			yag = yagmail.SMTP(entry_mail, entry_password)
-		os.system('. %s_LC_commands.txt' % (entry_LCname))
+		command = '%s_LC_commands.txt' % (entry_LCname)
+		subprocess.call(['sh',command])
 		if entry_mail == '':
 			label_results['text'] = 'Setup done.'
 		else:
