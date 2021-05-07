@@ -588,9 +588,9 @@ def residual_func(entry_target, entry_index):
 
 	gta = GTAnalysis.create('advdata/fit_model.npy')
 
-	resid = gta.residmap(entry_target, model={'SpatialModel' : 'PointSource', 'Index' : entry_index}, write_fits=True) 
+	resid = gta.residmap(entry_target, model={'SpatialModel' : 'PointSource', 'Index' : float(entry_index)}, write_fits=True) 
 
-	label_results['text'] = 'Done. .fits file saved in advdata folder'
+	label_results['text'] = 'residual map done. (.fits file saved in advdata folder)'
 
 def ts_func(entry_target, entry_index):
 	import matplotlib.pyplot as plt 
@@ -603,9 +603,9 @@ def ts_func(entry_target, entry_index):
 
 	gta = GTAnalysis.create('advdata/fit_model.npy')
 
-	tsmap = gta.tsmap(entry_target, model={'SpatialModel' : 'PointSource', 'Index' : entry_index}, write_fits=True) 
+	tsmap = gta.tsmap('TS_MAP', model={'SpatialModel' : 'PointSource', 'Index' : float(entry_index)}, write_fits=True) 
 
-	label_results['text'] = 'Done. .fits file saved in advdata folder'
+	label_results['text'] = 'Ts map done. (.fits file saved in advdata folder)'
 
 def tsns_func(entry_target, entry_index):
 	import matplotlib.pyplot as plt 
@@ -618,9 +618,9 @@ def tsns_func(entry_target, entry_index):
 
 	gta = GTAnalysis.create('advdata/fit_model.npy')
 
-	tsmap = gta.tsmap(entry_target, model={'SpatialModel' : 'PointSource', 'Index' : entry_index}, exclude=[entry_target],write_fits=True) 
+	tsmap = gta.tsmap('source_excludedTS', model={'SpatialModel' : 'PointSource', 'Index' : float(entry_index)}, exclude=[entry_target],write_fits=True) 
 
-	label_results['text'] = 'Done. .fits file saved in advdata folder'
+	label_results['text'] = 'Tsns done. (.fits file saved in advdata folder)'
 def SED_func(entry_target, entry_SEDnbins):
 	import matplotlib.pyplot as plt 
 	import matplotlib
@@ -628,24 +628,24 @@ def SED_func(entry_target, entry_SEDnbins):
 	from fermipy.gtanalysis import GTAnalysis
 
 	gta = GTAnalysis.create('advdata/fit_model.npy')
-	if entry_SEDnbins == 30:
+	if entry_SEDnbins == '30':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins))) #loge_bins=gta.log_energies[::3], outfile='SED10.fits') 
-	elif entry_SEDnbins == 15:
+	elif entry_SEDnbins == '15':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins)), loge_bins=gta.log_energies[::2])
-	elif entry_SEDnbins == 10:
+	elif entry_SEDnbins == '10':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins)), loge_bins=gta.log_energies[::3])
-	elif entry_SEDnbins == 6:
+	elif entry_SEDnbins == '6':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins)), loge_bins=gta.log_energies[::5])
-	elif entry_SEDnbins == 5:
+	elif entry_SEDnbins == '5':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins)), loge_bins=gta.log_energies[::6])
-	elif entry_SEDnbins == 3:
+	elif entry_SEDnbins == '3':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins)), loge_bins=gta.log_energies[::10])
-	elif entry_SEDnbins == 2:
+	elif entry_SEDnbins == '2':
 		sed = gta.sed(entry_target, outfile='SED%s.fits' % (str(entry_SEDnbins)), loge_bins=gta.log_energies[::15])
 	else:
 		messagebox.showerror('Error', 'binsz must be integer and the values allowed are \n 2,3,5,6,10,15,30')
 
-	label_results['text'] = 'Done. .fits file saved in advdata folder'
+	label_results['text'] = 'SED done. (.fits file saved in advdata folder)'
 
 
 root.mainloop()
