@@ -330,13 +330,17 @@ def LC_func(entry_mail, entry_password, entry_LCname):
 
 		if entry_mail == '':
 			messagebox.showwarning('Warning', 'No has dado ninguna direccion de correo.\n No se enviará un mensaje al terminar.')
-		receiver = entry_mail
-		yag = yagmail.SMTP(entry_mail, entry_password)
+		else:
+			receiver = entry_mail
+			yag = yagmail.SMTP(entry_mail, entry_password)
 		os.system('. %s_LC_commands.txt' % (entry_LCname))
-		try:
-			yag.send(to=receiver, subject='FERMI NOTIFICATION', contents='Ha terminado la LC'+entry_LCname)
-		except:
-			messagebox.showerror('Error', 'Invalid email adress. It is also possible that you have to give your google account spetial conditions of privacy. You will have received a google alert in this case.')
+		if entry_mail == '':
+			label_results['text'] = 'Setup done.'
+		else:
+			try:
+				yag.send(to=receiver, subject='FERMI NOTIFICATION', contents='Ha terminado la LC'+entry_LCname)
+			except:
+				messagebox.showerror('Error', 'Invalid email adress. It is also possible that you have to give your google account spetial conditions of privacy. You will have received a google alert in this case.')
 	else:
 		label_results['text'] = 'Proccess cancelled. Copy to run: . %s_LC_commands.txt' % (entry_LCname)
 
