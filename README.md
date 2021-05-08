@@ -1,6 +1,6 @@
 # Fermi_analysis
 
-The GIO analysis tools have been developed to fulfill my Bachelor's Thesis necessities.
+The GIO analysis tools have been developed to fulfill my Bachelor's Thesis necessities. I began the project in Spanish and then I changed to English. I apologyse if there is still any output in Spanish.
 The code has been implemented using the Fermi Tools(https://github.com/fermi-lat/Fermitools-conda) as well as fermipy (https://github.com/fermiPy/fermipy).
 
 
