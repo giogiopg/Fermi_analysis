@@ -307,7 +307,7 @@ def sednbins_info():
 def mail_info():
 	messagebox.showinfo('Information','Performing setup takes several hours. Giving your email and pw is optional and only required to recieve a message when the proccess is done.')
 def gtlike_info():
-	messagebox.showinfo('Information','Needed data to perform the Analysis: target, freerad, having create the config and run the setup.')
+	messagebox.showinfo('Information','Needed data to perform the Analysis: target, freerad, tolerance and having create the config and run the setup.')
 def cmap_info():
 	messagebox.showinfo('Information','Needed data to perform the Cmap and Roi.reg: mail*,password*, evfile, ra,dec,tmin, tmax,scfile, freerad')
 def resid_info():
