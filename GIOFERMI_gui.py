@@ -266,7 +266,7 @@ try:
 	button_Ts.grid(row=12, column=0)
 	
 	button_Tsns = tk.Button(subframe, text='Ts map no source', bg='gray', fg='black',
-		                   command=lambda: ts_func(entry_target.get(), entry_index.get()))
+		                   command=lambda: tsns_func(entry_target.get(), entry_index.get()))
 	button_Tsns.grid(row=12, column=1)
 	
 	button_SED = tk.Button(subframe, text=' SED analysis ', bg='gray', fg='black',
