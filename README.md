@@ -1,10 +1,10 @@
 # Fermi_analysis
 
-The GIO analysis tools have been developed to fulfill my Bachelor's Thesis necessities. I began the project in Spanish and then I changed to English. I apologyse if there is still any output in Spanish.
+The GIOtools have been developed to fulfill my Bachelor's Thesis necessities. I began the project in Spanish and then I changed to English. I apologyse if there is still any output in Spanish.
 The code has been implemented using the Fermi Tools(https://github.com/fermi-lat/Fermitools-conda) as well as fermipy (https://github.com/fermiPy/fermipy).
 
 
-With the GIO tools you should be able to:
+With the GIOtools you should be able to:
 
 - Perform your own binned analysis.
 - Get a counts Map of the región as well as a ROI .reg file.
