@@ -1,4 +1,3 @@
-![Captura de pantalla de 2021-05-12 13-52-06](https://user-images.githubusercontent.com/69729776/117981812-b1a5be00-b335-11eb-93f5-23b7f56fea74.png)
 # Fermi_analysis
 
 The GIOtools have been developed to fulfill my Bachelor's Thesis necessities. I began the project in Spanish and then I changed to English. I apologyse if there is still any output in Spanish.
@@ -66,3 +65,5 @@ To start the gui you only need to type now:
 _$python3 GIOFERMI_gui.py_
 
 You a ready forr your analysis!
+
+![Captura de pantalla de 2021-05-12 13-52-06](https://user-images.githubusercontent.com/69729776/117981812-b1a5be00-b335-11eb-93f5-23b7f56fea74.png)
